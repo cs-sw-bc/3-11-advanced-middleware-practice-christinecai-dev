@@ -1,0 +1,26 @@
+{
+  "name": "3-11-advanced-middleware-practice",
+  "version": "1.0.0",
+  "description": "> **Goal:** Build a backend API using **Express**, **MongoDB**, and **middleware** by following the steps below. > > ⚠️ This assignment is **instruction-only**. You must write the code yourself.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs-sw-bc/3-11-advanced-middleware-practice-christinecai-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cs-sw-bc/3-11-advanced-middleware-practice-christinecai-dev/issues"
+  },
+  "homepage": "https://github.com/cs-sw-bc/3-11-advanced-middleware-practice-christinecai-dev#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.0.2"
+  },
+  "type": "module"
+}

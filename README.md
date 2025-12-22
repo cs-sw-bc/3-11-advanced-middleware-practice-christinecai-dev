@@ -23,11 +23,29 @@ Data alrea dy exists in MongoDB. Your job is to **connect to it, expose it via r
 ## Part 1 — Project Setup
 
 1. Initialize a new Node.js project
+npm init -y
+
 2. Install required packages:
 
    * `express`
    * `mongoose`
+npm install express mongoose
+
 3. Set up a basic Express server
+
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
+
+
 4. Ensure the server starts without errors
 
 ---
@@ -42,6 +60,9 @@ Your tasks:
 2. Import the provided JSON file into a database called **`schoolDB`**
 3. Verify that a collection named **`enrollments`** exists
 4. Confirm that documents are visible using MongoDB Compass or shell
+
+mongoimport --db schoolDB --collection enrollments --file class_enrollments.json --jsonArray
+
 
 You should **not** modify the data structure.
 
@@ -167,3 +188,23 @@ Errors must:
 
 > **Important:** This assignment is about understanding **flow**, not copying code.
 > If something breaks, debug it — do not skip it.
+
+
+1. create a MongoDB database (catalog name is always plural and model names are singular)
+
+2. upload json
+
+3. Create a model folder and then copy model files and copy and paste in the data
+
+4. Inside the routes folder, call it enrollment.js (copy things from notes.js)
+  -call the model
+
+
+Why do database operations require async/await?
+Database operations involve asynchronous work like network and disk I/O, so async/await allows the code to pause until the operation completes or fails, ensuring later logic runs with the correct result instead of continuing too early.
+
+What happens if you forget to call next(err)?
+If you forget to call next(err) (or throw the error), Express will not pass the error to the error-handling middleware, which can cause the request to hang or return an incorrect response because the error is never handled.
+
+Why is error middleware placed at the end?
+Error middleware is placed at the end because Express only forwards errors to middleware that comes after the route where the error occurred, so placing it last ensures it can catch errors from all routes and middleware.
