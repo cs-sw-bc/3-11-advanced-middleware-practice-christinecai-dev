@@ -4,8 +4,7 @@
   "description": "> **Goal:** Build a backend API using **Express**, **MongoDB**, and **middleware** by following the steps below. > > ⚠️ This assignment is **instruction-only**. You must write the code yourself.",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +18,16 @@
   },
   "homepage": "https://github.com/cs-sw-bc/3-11-advanced-middleware-practice-christinecai-dev#readme",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "mongoose": "^9.0.2"
+    "express-session": "^1.18.2",
+    "mongoose": "^9.0.2",
+    "passport": "^0.7.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-local": "^1.0.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
 }
